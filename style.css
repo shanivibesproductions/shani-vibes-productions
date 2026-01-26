@@ -369,3 +369,62 @@ section {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 }
+
+/*
+ * Music page styles
+ *
+ * The music page uses the supplied cover art as a backdrop with a dark
+ * overlay so that text and embedded players remain legible.  A
+ * responsive layout centres the header and music embeds, and a
+ * consistent colour palette ties the page into the rest of the site.
+ */
+.music-page {
+  /* Layer a semi‑transparent gradient over the cover art to ensure
+     foreground elements stand out.  The cover image is stored in
+     images/cover.jpg. */
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
+              url('images/cover.jpg') center/cover no-repeat;
+  color: var(--text-light);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header for the music page */
+.music-header {
+  text-align: center;
+  padding: 4rem 0 2rem;
+}
+
+.music-header h1 {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  colour: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.music-header p {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+/* Section containing the music embeds */
+.music-section {
+  flex: 1;
+  padding: 2rem 0;
+}
+
+.music-section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  color: var(--accent);
+}
+
+.music-embed {
+  width: 100%;
+  max-width: 660px;
+  margin: 0 auto 2rem;
+  border-radius: 12px;
+  overflow: hidden;
+}
