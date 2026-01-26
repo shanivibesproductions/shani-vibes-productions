@@ -1,0 +1,352 @@
+/*
+ * Stylesheet for Shani Vibes film portfolio
+ *
+ * The design uses a dark colour palette reminiscent of a cinema
+ * experience. Gold accents highlight interactive elements. Responsive
+ * layouts ensure the site looks good on desktop and mobile. Feel free
+ * to tweak colours, fonts and spacing to match your personal brand.
+ */
+
+/* CSS variables for easy theming */
+:root {
+  --bg-dark: #0a0a0a;
+  --bg-light: #1a1a1a;
+  --text-light: #f5f5f5;
+  --accent: #c79d3c;
+  --accent-hover: #e0b450;
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Open Sans', sans-serif;
+}
+
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: colour 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  margin-bottom: 0.5em;
+}
+
+section {
+  padding: 4rem 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Hero section */
+.hero {
+  position: relative;
+  height: 100vh;
+  /* Updated hero background to use the new uploaded image (hero.jpg). Keeping center/cover ensures the image scales properly on different devices. */
+  background: url('images/hero.jpg') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: var(--text-light);
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9));
+  z-index: 1;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  z-index: 2;
+  position: relative;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links li a {
+  font-weight: 500;
+}
+
+.hero-content {
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: 5rem;
+  z-index: 2;
+  position: relative;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  letter-spacing: 2px;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  margin: 1rem 0 2rem 0;
+  color: #ddd;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--accent);
+  /* Use the correct CSS property (color) so text is visible on the yellow accent. Dark text provides sufficient contrast. */
+  color: var(--bg-dark);
+  font-weight: 600;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+  background-color: var(--accent-hover);
+}
+
+/* About section */
+.about {
+  background-color: var(--bg-light);
+}
+
+.about h2 {
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 2.5rem;
+  colour: var(--accent);
+}
+
+.about p {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 1.8;
+}
+
+/* Work section */
+.work {
+  background-color: var(--bg-dark);
+}
+
+.work h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  colour: var(--accent);
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.work-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.work-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.work-item:hover .work-info {
+  transform: translateY(0);
+}
+
+.work-info h3 {
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+}
+
+/* Showreel section */
+.showreel {
+  background-color: var(--bg-light);
+  text-align: center;
+}
+
+.showreel h2 {
+  colour: var(--accent);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.showreel .subtitle {
+  margin-bottom: 2rem;
+  colour: #ccc;
+}
+
+/* Featured section */
+.featured {
+  background-color: var(--bg-dark);
+  text-align: center;
+}
+
+.featured h2 {
+  colour: var(--accent);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.featured .subtitle {
+  margin-bottom: 2rem;
+  colour: #ccc;
+}
+
+/* Responsive video container for YouTube embeds */
+.video-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.video-container::after {
+  content: '';
+  display: block;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Contact section */
+.contact {
+  background-color: var(--bg-dark);
+  text-align: center;
+}
+
+.contact h2 {
+  colour: var(--accent);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.contact-details {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.contact-details p {
+  margin: 0.3rem 0;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--bg-light);
+  colour: var(--text-light);
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form button {
+  align-self: flex-start;
+  background-color: var(--accent);
+  colour: #0a0a0a;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.contact-form button:hover {
+  background-color: var(--accent-hover);
+}
+
+/* Footer */
+.footer {
+  background-color: var(--bg-light);
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  colour: #888;
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  .nav-links {
+    gap: 1rem;
+  }
+  .work-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
