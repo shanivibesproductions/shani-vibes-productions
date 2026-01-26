@@ -340,12 +340,31 @@ section {
 
 /* Responsive typography */
 @media (max-width: 768px) {
+  /* Adjust the hero heading size on small screens */
   .hero-content h1 {
     font-size: 2.5rem;
   }
-  .nav-links {
-    gap: 1rem;
+  /* Stack the navbar vertically on mobile.  The logo appears on its own line centered,
+     and the navigation links wrap below it. */
+  .navbar {
+    flex-direction: column;
+    align-items: center;
   }
+  .logo {
+    margin-bottom: 0.5rem;
+    /* Increase logo size slightly for better visibility on mobile */
+    font-size: 2rem;
+  }
+  .nav-links {
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  /* Use a different hero background image on mobile/tablet to avoid cropping issues. */
+  .hero {
+    background: url('images/hero-mobile.png') center/cover no-repeat;
+  }
+  /* Reduce the number of columns in the work grid for narrow screens */
   .work-grid {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
