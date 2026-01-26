@@ -98,6 +98,26 @@
           <!-- Replace placeholder images with a grid of embedded videos. Each video is wrapped in a responsive container to maintain the 16:9 aspect ratio and uses the privacy‑enhanced youtube‑nocookie domain to avoid Error 153. -->
           <div class="video-container">
             <iframe
+              src="https://www.youtube-nocookie.com/embed/GaVjesCXtcg"
+              title="GaVjesCXtcg video"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="video-container">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/kEfIi1FzX0Y"
+              title="kEfIi1FzX0Y video"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="video-container">
+            <iframe
               src="https://www.youtube-nocookie.com/embed/BeJmxQoBWuw"
               title="BeJmxQoBWuw video"
               frameborder="0"
@@ -286,6 +306,46 @@
               allowfullscreen
             ></iframe>
           </div>
+          <div class="video-container">
+            <iframe src="https://www.youtube-nocookie.com/embed/sBsOnaJ6V1I"
+            title="sBsOnaJ6V1I video"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
+          </div>
+          <div class="video-container">
+            <iframe src="https://www.youtube-nocookie.com/embed/mqKVKDvnTkQ"
+            title="mqKVKDvnTkQ video"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
+          </div>
+          <div class="video-container">
+            <iframe src="https://www.youtube-nocookie.com/embed/PTywftYbCrU"
+            title="PTywftYbCrU video"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
+          </div>
+          <div class="video-container">
+            <iframe src="https://www.youtube-nocookie.com/embed/9Gjwj6iPGUo"
+            title="9Gjwj6iPGUo video"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
+          </div>
+          <div class="video-container">
+            <iframe src="https://www.youtube-nocookie.com/embed/kpDvfr-ny_o"
+            title="kpDvfr-ny_o video"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
+          </div>
         </div>
       </div>
     </section>
@@ -299,13 +359,8 @@
           <!-- Removed the public email address as requested -->
           <p>Instagram: <a href="https://instagram.com/shanivibess" target="_blank">@shanivibess</a></p>
         </div>
-        <!-- Assign an ID to the form so its action can be set via JavaScript without exposing the email address in the markup -->
-        <form id="contactForm" class="contact-form" method="post">
-          <input type="text" name="name" placeholder="Your Name" required />
-          <input type="email" name="email" placeholder="Your Email" required />
-          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-          <button type="submit" class="btn">Send Message</button>
-        </form>
+        <!-- Embed JotForm form as requested -->
+        <script type="text/javascript" src="https://form.jotform.com/jsform/260253252592050"></script>
       </div>
     </section>
 
@@ -317,16 +372,9 @@
     <script>
       // Update the copyright year automatically
       document.getElementById('year').textContent = new Date().getFullYear();
-      // Dynamically set the contact form action to a mailto link using a base64‑encoded email. This hides the email address from the page markup.
-      (function() {
-        const encoded = 'c2hhbmlfY2hpa29uZGlAb3V0bG9vay5jb20='; // base64 for shani_chikondi@outlook.com
-        const email = atob(encoded);
-        const form = document.getElementById('contactForm');
-        if (form) {
-          form.setAttribute('action', 'mailto:' + email);
-          form.setAttribute('enctype', 'text/plain');
-        }
-      })();
+      // The contact form has been replaced by a secure JotForm embed, so no further client‑side
+      // processing is necessary here.  We intentionally avoid exposing the recipient email in
+      // the markup or JavaScript.  All submissions are handled by JotForm.
     </script>
   </body>
 </html>
