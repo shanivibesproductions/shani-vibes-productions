@@ -20,10 +20,46 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Hero background video should sit behind all hero content */
+      .hero {
+        position: relative;
+        overflow: hidden;
+        background: none !important;
+        background-image: none !important;
+      }
+
+      .hero-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+        pointer-events: none !important;
+      }
+
+      .navbar,
+      .hero-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      /* Ensure links/buttons stay clickable even if other overlays exist */
+      .navbar a,
+      .hero-content a,
+      .hero-content button {
+        pointer-events: auto;
+      }
+    </style>
   </head>
   <body>
     <!-- Hero section introduces the filmmaker and sets the mood with a cinematic background -->
     <header class="hero" id="home">
+      <video class="hero-video" autoplay muted loop playsinline>
+        <source src="media/breath.mp4" type="video/mp4" />
+      </video>
       <nav class="navbar">
         <h2 class="logo">Shani&nbsp;Vibes</h2>
         <ul class="nav-links">
