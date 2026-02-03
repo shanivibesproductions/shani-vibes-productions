@@ -57,7 +57,8 @@
   <body>
     <!-- Hero section introduces the filmmaker and sets the mood with a cinematic background -->
     <header class="hero" id="home">
-      <video class="hero-video" autoplay muted loop playsinline>
+      <video class="hero-video" autoplay muted loop playsinline preload="metadata">
+        <source src="media/breathmobile.mp4" type="video/mp4" media="(max-width: 768px)" />
         <source src="media/breath.mp4" type="video/mp4" />
       </video>
       <nav class="navbar">
